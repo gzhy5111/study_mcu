@@ -1,0 +1,3 @@
+".\Objects\转动精度.obj" 
+TO ".\Objects\转动精度" 
+PRINT(".\Listings\转动精度.m51") RAMSIZE(256) 

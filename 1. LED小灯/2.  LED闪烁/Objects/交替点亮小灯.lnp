@@ -1,0 +1,3 @@
+".\Objects\交替点亮小灯.obj" 
+TO ".\Objects\交替点亮小灯" 
+PRINT(".\Listings\交替点亮小灯.m51") RAMSIZE(256) 

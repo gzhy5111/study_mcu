@@ -1,0 +1,54 @@
+C51 COMPILER V9.60.0.0   ____                                                              07/02/2020 17:12:09 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ____
+OBJECT MODULE PLACED IN .\Objects\µ„’Û.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE µ„’Û.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\µ„’Û
+                    -.lst) TABS(2) OBJECT(.\Objects\µ„’Û.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          sbit ADDR0 = P1^0;
+   4          sbit ADDR1 = P1^1;
+   5          sbit ADDR2 = P1^2;
+   6          sbit ADDR3 = P1^3;
+   7          sbit ENLED = P1^4;
+   8          sbit LED = P0^0;
+   9          
+  10          void main()
+  11          {
+  12   1        //74HC138 U4
+  13   1        ENLED = 0;
+  14   1        ADDR3 = 0;
+  15   1        
+  16   1        //ÂØºÈÄöLEDC0
+  17   1        ADDR2 = 0;
+  18   1        ADDR1 = 0;
+  19   1        ADDR0 = 0;
+  20   1        
+  21   1        //ÁÇπ‰∫ÆÁ¨¨‰∏ÄÊéíÂ∞èÁÅØ
+  22   1        P0 = 0x00;
+  23   1        
+  24   1        //ÁÇπ‰∫ÆÁ¨¨‰∏Ä‰∏™Â∞èÁÅØ
+  25   1        //LED = 0;
+  26   1        while (1)
+  27   1        {
+  28   2          
+  29   2        }
+  30   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     15    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

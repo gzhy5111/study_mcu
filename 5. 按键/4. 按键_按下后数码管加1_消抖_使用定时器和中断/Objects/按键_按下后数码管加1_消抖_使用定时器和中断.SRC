@@ -1,0 +1,376 @@
+; .\Objects\∞¥º¸_∞¥œ¬∫Û ˝¬Îπ‹º”1_œ˚∂∂_ π”√∂® ±∆˜∫Õ÷–∂œ.SRC generated from: ∞¥º¸_∞¥œ¬∫Û ˝¬Îπ‹º”1_œ˚∂∂_ π”√∂® ±∆˜∫Õ÷–∂œ.c
+; COMPILER INVOKED BY:
+;        D:\Keil_v5\C51\BIN\C51.EXE ∞¥º¸_∞¥œ¬∫Û ˝¬Îπ‹º”1_œ˚∂∂_ π”√∂® ±∆˜∫Õ÷–∂œ.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\∞¥º¸_∞¥œ¬∫Û ˝¬Îπ‹º”1_œ˚∂∂_ π”√∂® ±∆˜∫Õ÷–∂œ.lst) TABS(2) SRC(.\Objects\∞¥º¸_∞¥œ¬∫Û ˝¬Îπ‹º”1_œ˚∂∂_ π”√∂® ±∆˜∫Õ÷–∂œ.SRC)
+
+$NOMOD51
+
+NAME	___________________1_____________________
+
+P0	DATA	080H
+P1	DATA	090H
+P2	DATA	0A0H
+P3	DATA	0B0H
+T0	BIT	0B0H.4
+AC	BIT	0D0H.6
+T1	BIT	0B0H.5
+T2	BIT	090H.0
+EA	BIT	0A8H.7
+IE	DATA	0A8H
+EXF2	BIT	0C8H.6
+RD	BIT	0B0H.7
+ES	BIT	0A8H.4
+IP	DATA	0B8H
+RI	BIT	098H.0
+INT0	BIT	0B0H.2
+CY	BIT	0D0H.7
+TI	BIT	098H.1
+INT1	BIT	0B0H.3
+KEY4	BIT	0A0H.7
+RCAP2H	DATA	0CBH
+PS	BIT	0B8H.4
+SP	DATA	081H
+T2EX	BIT	090H.1
+OV	BIT	0D0H.2
+RCAP2L	DATA	0CAH
+C_T2	BIT	0C8H.1
+WR	BIT	0B0H.6
+RCLK	BIT	0C8H.5
+TCLK	BIT	0C8H.4
+SBUF	DATA	099H
+PCON	DATA	087H
+SCON	DATA	098H
+TMOD	DATA	089H
+TCON	DATA	088H
+IE0	BIT	088H.1
+IE1	BIT	088H.3
+B	DATA	0F0H
+CP_RL2	BIT	0C8H.0
+ACC	DATA	0E0H
+ET0	BIT	0A8H.1
+ET1	BIT	0A8H.3
+TF0	BIT	088H.5
+ET2	BIT	0A8H.5
+TF1	BIT	088H.7
+ADDR0	BIT	090H.0
+TF2	BIT	0C8H.7
+RB8	BIT	098H.2
+TH0	DATA	08CH
+ADDR1	BIT	090H.1
+EX0	BIT	0A8H.0
+IT0	BIT	088H.0
+TH1	DATA	08DH
+ADDR2	BIT	090H.2
+TB8	BIT	098H.3
+EX1	BIT	0A8H.2
+IT1	BIT	088H.2
+TH2	DATA	0CDH
+ADDR3	BIT	090H.3
+P	BIT	0D0H.0
+SM0	BIT	098H.7
+TL0	DATA	08AH
+SM1	BIT	098H.6
+TL1	DATA	08BH
+SM2	BIT	098H.5
+TL2	DATA	0CCH
+PT0	BIT	0B8H.1
+PT1	BIT	0B8H.3
+RS0	BIT	0D0H.3
+PT2	BIT	0B8H.5
+TR0	BIT	088H.4
+RS1	BIT	0D0H.4
+TR1	BIT	088H.6
+TR2	BIT	0C8H.2
+PX0	BIT	0B8H.0
+PX1	BIT	0B8H.2
+DPH	DATA	083H
+DPL	DATA	082H
+EXEN2	BIT	0C8H.3
+REN	BIT	098H.4
+T2CON	DATA	0C8H
+ENLED	BIT	090H.4
+RXD	BIT	0B0H.0
+TXD	BIT	0B0H.1
+F0	BIT	0D0H.5
+PSW	DATA	0D0H
+?PR?main?___________________1_____________________ SEGMENT CODE 
+?DT?main?___________________1_____________________ SEGMENT DATA OVERLAYABLE 
+?BI?main?___________________1_____________________ SEGMENT BIT OVERLAYABLE 
+?PR?InterruptTimer0?___________________1_____________________ SEGMENT CODE 
+?DT?___________________1_____________________ SEGMENT DATA 
+?C_INITSEG           SEGMENT CODE 
+?CO?___________________1_____________________ SEGMENT CODE 
+?BI?___________________1_____________________ SEGMENT BIT 
+	EXTRN	CODE (?C_STARTUP)
+	PUBLIC	KeySta
+	PUBLIC	ledChar
+	PUBLIC	InterruptTimer0
+	PUBLIC	main
+
+	RSEG  ?DT?main?___________________1_____________________
+?main?BYTE:
+        cnt?041:   DS   1
+
+	RSEG  ?BI?main?___________________1_____________________
+?main?BIT:
+     backup?040:   DBIT   1
+
+	RSEG  ?DT?___________________1_____________________
+     keybuf?142:   DS   1
+
+	RSEG  ?BI?___________________1_____________________
+         KeySta:   DBIT   1
+
+	RSEG  ?CO?___________________1_____________________
+ledChar:
+	DB	0C0H
+	DB	0F9H
+	DB	0A4H
+	DB	0B0H
+	DB	099H
+	DB	092H
+	DB	082H
+	DB	0F8H
+	DB	080H
+	DB	090H
+	DB	088H
+	DB	083H
+	DB	0C6H
+	DB	0A1H
+	DB	086H
+	DB	08EH
+
+
+	RSEG  ?C_INITSEG
+	DB	0C1H, KeySta + 080H	; bit-init
+
+	DB	001H
+	DB	keybuf?142
+	DB	0FFH
+
+; #include <reg52.h>
+; 
+; sbit ADDR0 = P1^0;
+; sbit ADDR1 = P1^1;
+; sbit ADDR2 = P1^2;
+; sbit ADDR3 = P1^3;
+; sbit ENLED = P1^4;
+; sbit KEY4 = P2^7;
+; 
+; unsigned char code ledChar[] = {
+; 	0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 
+; 	0x80, 0x90, 0x88, 0x83, 0xC6, 0xA1, 0x86, 0x8E
+; };
+; 
+; bit KeySta = 1;
+; 
+; void main()
+
+	RSEG  ?PR?main?___________________1_____________________
+main:
+	USING	0
+			; SOURCE LINE # 17
+; {
+			; SOURCE LINE # 18
+; 	bit backup = 1;
+			; SOURCE LINE # 19
+	SETB 	backup?040
+; 	unsigned char cnt = 0;
+			; SOURCE LINE # 20
+	CLR  	A
+	MOV  	cnt?041,A
+; 	
+; 	//ÂºÄÂêØU3‰ΩøËÉΩ
+; 	ENLED = 0;
+			; SOURCE LINE # 23
+	CLR  	ENLED
+; 	ADDR3 = 1;
+			; SOURCE LINE # 24
+	SETB 	ADDR3
+; 	
+; 	//LEDS0‰ΩéÁîµÂπ≥
+; 	ADDR2 = 0;
+			; SOURCE LINE # 27
+	CLR  	ADDR2
+; 	ADDR1 = 0;
+			; SOURCE LINE # 28
+	CLR  	ADDR1
+; 	ADDR0 = 0;
+			; SOURCE LINE # 29
+	CLR  	ADDR0
+; 	
+; 	//ÂÆöÊó∂Âô®
+; 	TH0 = (65536-2000)/256;
+			; SOURCE LINE # 32
+	MOV  	TH0,#0F8H
+; 	TL0 = (65536-2000)%256;
+			; SOURCE LINE # 33
+	MOV  	TL0,#030H
+; 	TR0 = 1;
+			; SOURCE LINE # 34
+	SETB 	TR0
+; 	TMOD = 0x01;
+			; SOURCE LINE # 35
+	MOV  	TMOD,#01H
+; 	
+; 	//‰∏≠Êñ≠
+; 	EA = 1;
+			; SOURCE LINE # 38
+	SETB 	EA
+; 	ET0 = 1;
+			; SOURCE LINE # 39
+	SETB 	ET0
+; 	
+; 	#pragma ASM
+; 		CLR	0xA0.3
+	  CLR	0xA0.3
+; 	#pragma ENDASM
+; 	
+; 	P0 = ledChar[cnt];
+			; SOURCE LINE # 45
+	MOV  	A,cnt?041
+	MOV  	DPTR,#ledChar
+	MOVC 	A,@A+DPTR
+	MOV  	P0,A
+?C0001:
+; 
+; 	
+; 	while(1)
+			; SOURCE LINE # 48
+; 	{
+			; SOURCE LINE # 49
+; 		if (KeySta != backup)
+			; SOURCE LINE # 50
+	MOV  	C,KeySta
+	JNB  	backup?040,?C0012
+	CPL  	C
+?C0012:
+	JNC  	?C0001
+; 		{
+			; SOURCE LINE # 51
+; 			if (backup == 0)
+			; SOURCE LINE # 52
+	JB   	backup?040,?C0004
+; 			{
+			; SOURCE LINE # 53
+; 				cnt++;
+			; SOURCE LINE # 54
+	INC  	cnt?041
+; 				if (cnt >= 10)
+			; SOURCE LINE # 55
+	CLR  	C
+	MOV  	A,cnt?041
+	SUBB 	A,#0AH
+	MOV  	A,#080H
+	SUBB 	A,#080H
+	JC   	?C0005
+; 				{
+			; SOURCE LINE # 56
+; 					cnt = 0;
+			; SOURCE LINE # 57
+	CLR  	A
+	MOV  	cnt?041,A
+; 				}
+			; SOURCE LINE # 58
+?C0005:
+; 				P0 = ledChar[cnt];
+			; SOURCE LINE # 59
+	MOV  	A,cnt?041
+	MOV  	DPTR,#ledChar
+	MOVC 	A,@A+DPTR
+	MOV  	P0,A
+; 			}
+			; SOURCE LINE # 60
+?C0004:
+; 			backup = KeySta;
+			; SOURCE LINE # 61
+	MOV  	C,KeySta
+	MOV  	backup?040,C
+; 		}
+			; SOURCE LINE # 62
+; 	}
+			; SOURCE LINE # 63
+	SJMP 	?C0001
+; END OF main
+
+CSEG	AT	0000BH
+	LJMP	InterruptTimer0
+
+; }
+; 
+; //‰∏≠Êñ≠ÁöÑÁõÆÁöÑÔºöÊ£ÄÊµãÊåâÈîÆÁä∂ÊÄÅÔºàÊòØÂê¶Ë¢´Êåâ‰∏ãÔºâ
+; void InterruptTimer0()	interrupt 1
+
+	RSEG  ?PR?InterruptTimer0?___________________1_____________________
+	USING	0
+InterruptTimer0:
+	PUSH 	ACC
+	PUSH 	PSW
+	MOV  	PSW,#00H
+	PUSH 	AR6
+	PUSH 	AR7
+	USING	0
+			; SOURCE LINE # 67
+; {
+; 	static unsigned char keybuf = 0xFF;
+; 	
+; 	TH0 = (65536-2000)/256;
+			; SOURCE LINE # 71
+	MOV  	TH0,#0F8H
+; 	TL0 = (65536-2000)%256;
+			; SOURCE LINE # 72
+	MOV  	TL0,#030H
+; 	
+; 	//ËøõÂÖ•‰∏ÄÊ¨°‰∏≠Êñ≠Â∞±Áßª‰Ωç‰∏ÄÊ¨°
+; 	keybuf = (keybuf << 1)|KEY4;
+			; SOURCE LINE # 75
+	MOV  	A,keybuf?142
+	ADD  	A,ACC
+	MOV  	R7,A
+	MOV  	C,KEY4
+	CLR  	A
+	RLC  	A
+	ORL  	A,R7
+	MOV  	keybuf?142,A
+; 	
+; 	if (keybuf == 0x00)		//ËøûÁª≠ÂÖ´Ê¨°ÈÉΩÊòØ0
+			; SOURCE LINE # 77
+	MOV  	R7,A
+	MOV  	R6,#00H
+	JNZ  	?C0007
+; 	{
+			; SOURCE LINE # 78
+; 		KeySta = 0;
+			; SOURCE LINE # 79
+	CLR  	KeySta
+; 	}
+			; SOURCE LINE # 80
+	SJMP 	?C0011
+?C0007:
+; 	else if (keybuf == 0xFF)
+			; SOURCE LINE # 81
+	MOV  	A,R7
+	CPL  	A
+	ORL  	A,R6
+	JNZ  	?C0011
+; 	{
+			; SOURCE LINE # 82
+; 		KeySta = 1;
+			; SOURCE LINE # 83
+	SETB 	KeySta
+; 	}
+			; SOURCE LINE # 84
+; 	else
+; 	{
+			; SOURCE LINE # 86
+; 	}
+			; SOURCE LINE # 87
+; }			; SOURCE LINE # 88
+?C0011:
+	POP  	AR7
+	POP  	AR6
+	POP  	PSW
+	POP  	ACC
+	RETI 	
+; END OF InterruptTimer0
+
+	END

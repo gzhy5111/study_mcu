@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\点阵_动态.obj" 
+TO ".\Objects\点阵_动态" 
+PRINT(".\Listings\点阵_动态.m51") RAMSIZE(256) 

@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.0.0   ___________LED__                                                  07/02/2020 17:35:35 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ___________LED__
+OBJECT MODULE PLACED IN .\Objects\╟╢╪Э_╟╢об╨СLEDаа.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE ╟╢╪Э_╟╢об╨СLEDаа.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\L
+                    -istings\╟╢╪Э_╟╢об╨СLEDаа.lst) TABS(2) OBJECT(.\Objects\╟╢╪Э_╟╢об╨СLEDаа.obj)
+
+line level    source
+
+   1          /*!
+   2           * KeyOutИ≥╓Х┤╙Е╥╠Д╫▌Г■╣Е╧ЁО╪▄Е┘╤Д╩√OutФ≤╞И╚≤Г■╣Е╧ЁЦ─┌
+   3           * Х╞╩Е▐√KeyInО╪▄Х▀╔Ф≤╞Д╫▌Г■╣Е╧ЁД╩ёХ║╗Ф▄┴Д╦▀О╪▄И╚≤Г■╣Е╧ЁД╩ёХ║╗Е╪╧Х╣╥Ц─┌
+   4           */
+   5          
+   6          #include <reg52.h>
+   7          
+   8          sbit ADDR0 = P1^0;
+   9          sbit ADDR1 = P1^1;
+  10          sbit ADDR2 = P1^2;
+  11          sbit ADDR3 = P1^3;
+  12          sbit ENLED = P1^4;
+  13          
+  14          //И■╝Г⌡≤Ф▄┴Д╦▀Ф≤╞Д╫▌Г■╣Е╧Ё
+  15          sbit KEY4 = P2^7;
+  16          
+  17          void main()
+  18          {
+  19   1        ENLED = 0;
+  20   1        ADDR3 = 1;
+  21   1        
+  22   1        ADDR2 = 1;
+  23   1        ADDR1 = 1;
+  24   1        ADDR0 = 0;
+  25   1        
+  26   1        P2 = 0xF7;          //1111 0111 KeyOut1 = 1, Х╞╩Е▐√KeyIn4О╪▄Х▀╔KeyIn4 = 0Е┬≥Д╦╨Ф▄┴Д╦▀О╪▄Д╦╨1Ф≤╞Е╪╧Х╣╥
+  27   1        
+  28   1        while (1)
+  29   1        {
+  30   2          P0 = 0xFF;
+  31   2          if (KEY4 == 0)    //Ф▄┴Д╦▀
+  32   2          {
+  33   3            P0 = 0xFE;
+  34   3          }
+  35   2          else
+  36   2          {
+  37   3            P0 = 0xFF;
+  38   3          } 
+  39   2        }
+  40   1        
+  41   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     29    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

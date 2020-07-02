@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.0.0   ________                                                          07/02/2020 17:52:14 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ________
+OBJECT MODULE PLACED IN .\Objects\转动精度.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE 转动精度.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -转动精度.lst) TABS(2) OBJECT(.\Objects\转动精度.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          void turnMotor(unsigned long angle);
+   4          
+   5          int main(void)
+   6          {
+   7   1        turnMotor(360*1);   //转一圈
+   8   1        while(1);
+   9   1      }
+  10          
+  11          void delay()
+  12          {
+  13   1        unsigned i = 200;
+  14   1        while(i--);
+  15   1      }
+  16          
+  17          void turnMotor(unsigned long angle)
+  18          {
+  19   1        unsigned char tmp;
+  20   1        unsigned char index = 0;
+  21   1        unsigned long beats = 0;
+  22   1        
+  23   1        unsigned char code BeatCode[8] = {
+  24   1          0x0E, 0x0C, 0x0D, 0x09, 0x0B, 0x03, 0x07, 0x06
+  25   1        };
+  26   1        
+  27   1        beats = (angle*4076)/360;
+  28   1        
+  29   1        while(beats--)
+  30   1        {
+  31   2          tmp = P1;
+  32   2          tmp = tmp & 0xF0;
+  33   2          tmp = tmp | BeatCode[index];
+  34   2          P1 = tmp;
+  35   2          index++;
+  36   2          index = index & 0x07;
+  37   2          delay();
+  38   2        }
+  39   1        P1 = P1 | 0x0F;
+  40   1      }
+  41          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    124    ----
+   CONSTANT SIZE    =      8    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       9
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

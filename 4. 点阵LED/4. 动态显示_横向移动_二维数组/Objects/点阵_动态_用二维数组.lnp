@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\点阵_动态_用二维数组.obj" 
+TO ".\Objects\点阵_动态_用二维数组" 
+PRINT(".\Listings\点阵_动态_用二维数组.m51") RAMSIZE(256) 

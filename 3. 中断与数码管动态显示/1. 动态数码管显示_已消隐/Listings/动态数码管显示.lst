@@ -1,0 +1,24 @@
+C51 COMPILER V9.60.0.0   ______________                                                    07/02/2020 17:02:54 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ______________
+OBJECT MODULE PLACED IN .\Objects\动态数码管显示.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE 动态数码管显示.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Lis
+                    -tings\动态数码管显示.lst) TABS(2) OBJECT(.\Objects\动态数码管显示.obj)
+
+line level    source
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    434    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      6       7
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

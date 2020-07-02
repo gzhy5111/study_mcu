@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\动态数码管显示_中断_不显示0.obj" 
+TO ".\Objects\动态数码管显示_中断_不显示0" 
+PRINT(".\Listings\动态数码管显示_中断_不显示0.m51") RAMSIZE(256) 

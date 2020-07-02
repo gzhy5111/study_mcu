@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\步进电机01.obj" 
+TO ".\Objects\步进电机01" 
+PRINT(".\Listings\步进电机01.m51") RAMSIZE(256) 

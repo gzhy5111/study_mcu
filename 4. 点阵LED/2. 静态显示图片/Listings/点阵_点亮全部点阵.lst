@@ -1,0 +1,78 @@
+C51 COMPILER V9.60.0.0   _________________                                                 07/02/2020 17:13:33 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE _________________
+OBJECT MODULE PLACED IN .\Objects\µ„’Û_µ„¡¡»´≤øµ„’Û.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE µ„’Û_µ„¡¡»´≤øµ„’Û.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\
+                    -Listings\µ„’Û_µ„¡¡»´≤øµ„’Û.lst) TABS(2) OBJECT(.\Objects\µ„’Û_µ„¡¡»´≤øµ„’Û.obj)
+
+line level    source
+
+   1          /*!
+   2           * Áü•ËØÜÁÇπÔºö‰∏≠Êñ≠„ÄÅËÆ°Êó∂Âô®
+   3           */
+   4          
+   5          #include <reg52.h>
+   6          
+   7          sbit ADDR0 = P1^0;
+   8          sbit ADDR1 = P1^1;
+   9          sbit ADDR2 = P1^2;
+  10          sbit ADDR3 = P1^3;
+  11          sbit ENLED = P1^4;
+  12          
+  13          void main()
+  14          {
+  15   1        //ÂºÄÂêØU4‰ΩøËÉΩ
+  16   1        ENLED = 0;
+  17   1        ADDR3 = 0;
+  18   1        
+  19   1        //ÊâìÂºÄ‰∏≠Êñ≠
+  20   1        EA = 1;
+  21   1        ET0 = 1;
+  22   1        
+  23   1        //ËÆ°Êó∂Âô®
+  24   1        TMOD = 0x01;
+  25   1        TR0 = 1;
+  26   1        
+  27   1        //ÂÆöÊó∂1ms
+  28   1        TH0 = (65536-1000)/256;
+  29   1        TL0 = (65536-1000)%256;
+  30   1        while(1);
+  31   1      }
+  32          
+  33          void InterruptTimer0() interrupt 1
+  34          {
+  35   1        static unsigned char i = 0;
+  36   1        TH0 = (65536-1000)/256;
+  37   1        TL0 = (65536-1000)%256;
+  38   1        
+  39   1        P0 = 0xFF;    //ÁÜÑÁÅ≠
+  40   1        switch(i)
+  41   1        {
+  42   2          case 0: ADDR2=0; ADDR1=0; ADDR0=0; i++; P0=0xFF; break;
+  43   2          case 1: ADDR2=0; ADDR1=0; ADDR0=1; i++; P0=0x99; break;
+  44   2          case 2: ADDR2=0; ADDR1=1; ADDR0=0; i++; P0=0x00; break;
+  45   2          case 3: ADDR2=0; ADDR1=1; ADDR0=1; i++; P0=0x00; break;
+  46   2          case 4: ADDR2=1; ADDR1=0; ADDR0=0; i++; P0=0x00; break;
+  47   2          case 5: ADDR2=1; ADDR1=0; ADDR0=1; i++; P0=0x81; break;
+  48   2          case 6: ADDR2=1; ADDR1=1; ADDR0=0; i++; P0=0xC3; break;
+  49   2          case 7: ADDR2=1; ADDR1=1; ADDR0=1; i=0; P0=0xE7; break;
+  50   2          default: break;
+  51   2        }
+  52   1      }
+
+
+C51 COMPILER V9.60.0.0   _________________                                                 07/02/2020 17:13:33 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    183    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

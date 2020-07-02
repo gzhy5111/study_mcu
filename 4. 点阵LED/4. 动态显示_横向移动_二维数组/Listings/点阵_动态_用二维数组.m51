@@ -1,0 +1,181 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/02/2020  17:16:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\点阵_动态_用二维数组.obj TO .\Objects\点阵_动态_用二维数组 
+>> PRINT (.\Listings\点阵_动态_用二维数组.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\点阵_动态_用二维数组.obj (____________________)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\点阵_动态_用二维数组 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         ?DT?____________________
+            IDATA   000BH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     012CH     UNIT         ?PR?INTERRUPTTIMER0?____________________
+            CODE    092CH     00F0H     UNIT         ?CO?____________________
+            CODE    0A1CH     008CH     UNIT         ?C_C51STARTUP
+            CODE    0AA8H     0015H     UNIT         ?PR?MAIN?____________________
+            CODE    0ABDH     000AH     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\点阵_动态_用二维数组 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?____________________
+  +--> ?C_INITSEG
+
+*** NEW ROOT ***************************************************
+
+?PR?INTERRUPTTIMER0?____________________
+  +--> ?CO?____________________
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\点阵_动态_用二维数组 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/02/2020  17:16:12  PAGE 2
+
+
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0A1CH         SEGMENT       ?C_C51STARTUP
+  I:000BH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0A1FH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0A1CH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0A1CH         LINE#         133
+  C:0A1EH         LINE#         134
+  C:0A1FH         LINE#         135
+  C:0A20H         LINE#         136
+  C:0A22H         LINE#         185
+  C:0A25H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        ____________________
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:092CH         PUBLIC        image
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0008H         SYMBOL        index
+  C:0AA8H         PUBLIC        main
+  C:0800H         PUBLIC        interruptTimer0
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  B:0090H.0       PUBLIC        ADDR0
+  D:008CH         PUBLIC        TH0
+  B:0090H.1       PUBLIC        ADDR1
+  B:0090H.2       PUBLIC        ADDR2
+  B:0090H.3       PUBLIC        ADDR3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/02/2020  17:16:12  PAGE 3
+
+
+  D:008AH         PUBLIC        TL0
+  D:0009H         SYMBOL        tmr
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:000AH         SYMBOL        i
+  B:0090H.4       PUBLIC        ENLED
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0AA8H         LINE#         43
+  C:0AA8H         LINE#         44
+  C:0AA8H         LINE#         45
+  C:0AAAH         LINE#         46
+  C:0AACH         LINE#         48
+  C:0AAEH         LINE#         49
+  C:0AB0H         LINE#         51
+  C:0AB3H         LINE#         52
+  C:0AB5H         LINE#         53
+  C:0AB8H         LINE#         54
+  C:0ABBH         LINE#         55
+  -------         ENDPROC       MAIN
+  -------         PROC          INTERRUPTTIMER0
+  C:0800H         LINE#         64
+  C:080FH         LINE#         66
+  C:0812H         LINE#         67
+  C:0815H         LINE#         70
+  C:0818H         LINE#         71
+  C:0841H         LINE#         72
+  C:0841H         LINE#         73
+  C:0859H         LINE#         74
+  C:0871H         LINE#         75
+  C:0888H         LINE#         76
+  C:089FH         LINE#         77
+  C:08B6H         LINE#         78
+  C:08CDH         LINE#         79
+  C:08E4H         LINE#         80
+  C:0900H         LINE#         81
+  C:0900H         LINE#         82
+  C:0900H         LINE#         83
+  C:0902H         LINE#         84
+  C:090DH         LINE#         85
+  C:090DH         LINE#         86
+  C:0910H         LINE#         87
+  C:0912H         LINE#         88
+  C:091CH         LINE#         89
+  C:091CH         LINE#         90
+  C:091FH         LINE#         91
+  C:091FH         LINE#         92
+  C:091FH         LINE#         93
+  -------         ENDPROC       INTERRUPTTIMER0
+  -------         ENDMOD        ____________________
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 024CH BYTE (28%) *
+******************************************************************************
+
+Program Size: data=12.0 xdata=0 code=717
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

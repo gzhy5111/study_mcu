@@ -1,0 +1,4 @@
+".\Objects\按键_电机实用程序.obj",
+"D:\Keil_v5\C51\LIB\C51S.LIB" 
+TO ".\Objects\按键_电机实用程序" 
+PRINT(".\Listings\按键_电机实用程序.m51") RAMSIZE(256) 

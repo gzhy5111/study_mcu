@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\按键_按下后数码管加1.obj" 
+TO ".\Objects\按键_按下后数码管加1" 
+PRINT(".\Listings\按键_按下后数码管加1.m51") RAMSIZE(256) 

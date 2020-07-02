@@ -1,0 +1,495 @@
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\按键_电机实用程序.OBJ
+ASSEMBLER INVOKED BY: D:\Keil_v5\C51\BIN\A51.EXE .\Objects\按键_电机实用程序.src PR(.\Listings\按键_电机实用程序.ls1) EP
+                       DEBUG
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ; .\Objects\按键_电机实用程序.SRC generated from: 按键_电机实用程序.c
+                       2     ; COMPILER INVOKED BY:
+                       3     ;        D:\Keil_v5\C51\BIN\C51.EXE 按键_电机实用程序.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJE
+                             CTEXTEND PRINT(.\Listings\按键_电机实用程序.lst) TABS(2) SRC(.\Objects\按键_电机实用程序.SRC)
+                       4     
+                       5     $nomod51 
+                       6     
+                       7     NAME    _________________
+                       8     
+  0080                 9     P0      DATA    080H
+  0090                10     P1      DATA    090H
+  00A0                11     P2      DATA    0A0H
+  00B0                12     P3      DATA    0B0H
+  00B4                13     T0      BIT     0B0H.4
+  00D6                14     AC      BIT     0D0H.6
+  00B5                15     T1      BIT     0B0H.5
+  0090                16     T2      BIT     090H.0
+  00AF                17     EA      BIT     0A8H.7
+  00A8                18     IE      DATA    0A8H
+  00CE                19     EXF2    BIT     0C8H.6
+  00B7                20     RD      BIT     0B0H.7
+  00AC                21     ES      BIT     0A8H.4
+  00B8                22     IP      DATA    0B8H
+  0098                23     RI      BIT     098H.0
+  00B2                24     INT0    BIT     0B0H.2
+  00D7                25     CY      BIT     0D0H.7
+  0099                26     TI      BIT     098H.1
+  00B3                27     INT1    BIT     0B0H.3
+  00CB                28     RCAP2H  DATA    0CBH
+  00BC                29     PS      BIT     0B8H.4
+  0081                30     SP      DATA    081H
+  0091                31     T2EX    BIT     090H.1
+  00D2                32     OV      BIT     0D0H.2
+  00CA                33     RCAP2L  DATA    0CAH
+  00C9                34     C_T2    BIT     0C8H.1
+  00B6                35     WR      BIT     0B0H.6
+  00CD                36     RCLK    BIT     0C8H.5
+  00CC                37     TCLK    BIT     0C8H.4
+  0099                38     SBUF    DATA    099H
+  0087                39     PCON    DATA    087H
+  0098                40     SCON    DATA    098H
+  0089                41     TMOD    DATA    089H
+  0088                42     TCON    DATA    088H
+  0089                43     IE0     BIT     088H.1
+  008B                44     IE1     BIT     088H.3
+  00F0                45     B       DATA    0F0H
+  00C8                46     CP_RL2  BIT     0C8H.0
+  00E0                47     ACC     DATA    0E0H
+  00A9                48     ET0     BIT     0A8H.1
+  00AB                49     ET1     BIT     0A8H.3
+  008D                50     TF0     BIT     088H.5
+  00AD                51     ET2     BIT     0A8H.5
+  008F                52     TF1     BIT     088H.7
+  00CF                53     TF2     BIT     0C8H.7
+  009A                54     RB8     BIT     098H.2
+  008C                55     TH0     DATA    08CH
+  00A8                56     EX0     BIT     0A8H.0
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     2
+
+  0088                57     IT0     BIT     088H.0
+  008D                58     TH1     DATA    08DH
+  009B                59     TB8     BIT     098H.3
+  00AA                60     EX1     BIT     0A8H.2
+  008A                61     IT1     BIT     088H.2
+  00CD                62     TH2     DATA    0CDH
+  00D0                63     P       BIT     0D0H.0
+  009F                64     SM0     BIT     098H.7
+  008A                65     TL0     DATA    08AH
+  009E                66     SM1     BIT     098H.6
+  008B                67     TL1     DATA    08BH
+  009D                68     SM2     BIT     098H.5
+  00CC                69     TL2     DATA    0CCH
+  00B9                70     PT0     BIT     0B8H.1
+  00BB                71     PT1     BIT     0B8H.3
+  00D3                72     RS0     BIT     0D0H.3
+  00BD                73     PT2     BIT     0B8H.5
+  008C                74     TR0     BIT     088H.4
+  00D4                75     RS1     BIT     0D0H.4
+  008E                76     TR1     BIT     088H.6
+  00CA                77     TR2     BIT     0C8H.2
+  00B8                78     PX0     BIT     0B8H.0
+  00BA                79     PX1     BIT     0B8H.2
+  0083                80     DPH     DATA    083H
+  0082                81     DPL     DATA    082H
+  00CB                82     EXEN2   BIT     0C8H.3
+  009C                83     REN     BIT     098H.4
+  00C8                84     T2CON   DATA    0C8H
+  00B0                85     RXD     BIT     0B0H.0
+  00B1                86     TXD     BIT     0B0H.1
+  00D5                87     F0      BIT     0D0H.5
+  00D0                88     PSW     DATA    0D0H
+                      89     ?PR?main?_________________               SEGMENT CODE 
+                      90     ?PR?_StartMotor?_________________        SEGMENT CODE 
+                      91     ?DT?_StartMotor?_________________        SEGMENT DATA OVERLAYABLE 
+                      92     ?PR?InterruptTimer0?_________________    SEGMENT CODE 
+                      93     ?DT?_________________                    SEGMENT DATA 
+                      94     ?C_INITSEG           SEGMENT CODE 
+                      95     ?CO?_________________                    SEGMENT CODE 
+                      96             EXTRN   CODE (?C_STARTUP)
+                      97             EXTRN   CODE (?C?LMUL)
+                      98             EXTRN   CODE (?C?ULDIV)
+                      99             EXTRN   CODE (?C?ULCMP)
+                     100             PUBLIC  beats
+                     101             PUBLIC  InterruptTimer0
+                     102             PUBLIC  _StartMotor
+                     103             PUBLIC  main
+                     104     
+----                 105             RSEG  ?DT?_StartMotor?_________________
+0000                 106     ?_StartMotor?BYTE:
+0000                 107           angle?140:   DS   4
+                     108     
+----                 109             RSEG  ?DT?_________________
+0000                 110           index?242:   DS   1
+0001                 111               beats:   DS   4
+                     112     
+----                 113             RSEG  ?CO?_________________
+0000                 114     BeatCode?243:
+0000 0E              115             DB      00EH
+0001 0C              116             DB      00CH
+0002 0D              117             DB      00DH
+0003 09              118             DB      009H
+0004 0B              119             DB      00BH
+0005 03              120             DB      003H
+0006 07              121             DB      007H
+0007 06              122             DB      006H
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     3
+
+                     123     
+                     124     
+----                 125             RSEG  ?C_INITSEG
+0000 04              126             DB      004H
+0001 00       F      127             DB      beats
+0002 00000000        128             DB      000H,000H,000H,000H     ; long
+                     129     
+0006 01              130             DB      001H
+0007 00       F      131             DB      index?242
+0008 00              132             DB      000H
+                     133     
+                     134     ; #include <reg52.h>
+                     135     ; 
+                     136     ; unsigned long beats = 0;
+                     137     ; void StartMotor(unsigned long angle);
+                     138     ; void main()
+                     139     
+----                 140             RSEG  ?PR?main?_________________
+0000                 141     main:
+                     142             USING   0
+                     143                             ; SOURCE LINE # 5
+                     144     ; {
+                     145                             ; SOURCE LINE # 6
+                     146     ;       //中断
+                     147     ;       EA = 1;
+                     148                             ; SOURCE LINE # 8
+0000 D2AF            149             SETB    EA
+                     150     ;       ET0 = 1;
+                     151                             ; SOURCE LINE # 9
+0002 D2A9            152             SETB    ET0
+                     153     ;       
+                     154     ;       //定时器。定时器2ms用来刷新节拍（电机的特性，>1.8ms才能启动）
+                     155     ;       TH0 = (65536-2000)/256;
+                     156                             ; SOURCE LINE # 12
+0004 758CF8          157             MOV     TH0,#0F8H
+                     158     ;       TL0 = (65536-2000)%256;
+                     159                             ; SOURCE LINE # 13
+0007 758A30          160             MOV     TL0,#030H
+                     161     ;       TMOD = 0x01;
+                     162                             ; SOURCE LINE # 14
+000A 758901          163             MOV     TMOD,#01H
+                     164     ;       TR0 = 1;
+                     165                             ; SOURCE LINE # 15
+000D D28C            166             SETB    TR0
+                     167     ;       
+                     168     ;       StartMotor(90);
+                     169                             ; SOURCE LINE # 17
+000F 7F5A            170             MOV     R7,#05AH
+0011 7E00            171             MOV     R6,#00H
+0013 7D00            172             MOV     R5,#00H
+0015 7C00            173             MOV     R4,#00H
+0017 120000   F      174             LCALL   _StartMotor
+001A                 175     ?C0001:
+                     176     ;       while(1);
+                     177                             ; SOURCE LINE # 18
+001A 80FE            178             SJMP    ?C0001
+                     179     ; END OF main
+                     180     
+                     181     ; }
+                     182     ; 
+                     183     ; void StartMotor(unsigned long angle)
+                     184     
+----                 185             RSEG  ?PR?_StartMotor?_________________
+0000                 186     _StartMotor:
+                     187             USING   0
+                     188                             ; SOURCE LINE # 21
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     4
+
+0000 8F00     F      189             MOV     angle?140+03H,R7
+0002 8E00     F      190             MOV     angle?140+02H,R6
+0004 8D00     F      191             MOV     angle?140+01H,R5
+0006 8C00     F      192             MOV     angle?140,R4
+                     193     ; {
+                     194                             ; SOURCE LINE # 22
+                     195     ;       EA = 0;         //因为angle是long型，所以操作之前关闭中断
+                     196                             ; SOURCE LINE # 23
+0008 C2AF            197             CLR     EA
+                     198     ;       beats = (angle*4076)/360;
+                     199                             ; SOURCE LINE # 24
+000A E4              200             CLR     A
+000B 7FEC            201             MOV     R7,#0ECH
+000D 7E0F            202             MOV     R6,#0FH
+000F FD              203             MOV     R5,A
+0010 FC              204             MOV     R4,A
+0011 AB00     F      205             MOV     R3,angle?140+03H
+0013 AA00     F      206             MOV     R2,angle?140+02H
+0015 A900     F      207             MOV     R1,angle?140+01H
+0017 A800     F      208             MOV     R0,angle?140
+0019 120000   F      209             LCALL   ?C?LMUL
+001C E4              210             CLR     A
+001D 7B68            211             MOV     R3,#068H
+001F 7A01            212             MOV     R2,#01H
+0021 F9              213             MOV     R1,A
+0022 F8              214             MOV     R0,A
+0023 120000   F      215             LCALL   ?C?ULDIV
+0026 8F00     F      216             MOV     beats+03H,R7
+0028 8E00     F      217             MOV     beats+02H,R6
+002A 8D00     F      218             MOV     beats+01H,R5
+002C 8C00     F      219             MOV     beats,R4
+                     220     ;       EA = 1;
+                     221                             ; SOURCE LINE # 25
+002E D2AF            222             SETB    EA
+                     223     ; }
+                     224                             ; SOURCE LINE # 26
+0030 22              225             RET     
+                     226     ; END OF _StartMotor
+                     227     
+----                 228     CSEG    AT      0000BH
+000B 020000   F      229             LJMP    InterruptTimer0
+                     230     
+                     231     ; 
+                     232     ; void InterruptTimer0() interrupt 1
+                     233     
+----                 234             RSEG  ?PR?InterruptTimer0?_________________
+                     235             USING   0
+0000                 236     InterruptTimer0:
+0000 C0E0            237             PUSH    ACC
+0002 C0F0            238             PUSH    B
+0004 C083            239             PUSH    DPH
+0006 C082            240             PUSH    DPL
+0008 C0D0            241             PUSH    PSW
+000A 75D000          242             MOV     PSW,#00H
+000D C000            243             PUSH    AR0
+000F C001            244             PUSH    AR1
+0011 C002            245             PUSH    AR2
+0013 C003            246             PUSH    AR3
+0015 C004            247             PUSH    AR4
+0017 C005            248             PUSH    AR5
+0019 C006            249             PUSH    AR6
+001B C007            250             PUSH    AR7
+                     251             USING   0
+                     252                             ; SOURCE LINE # 28
+                     253     ; {
+                     254     ;       unsigned char tmp;
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     5
+
+                     255     ;       static unsigned char index = 0;
+                     256     ;       unsigned char code BeatCode[8] = {
+                     257     ;               0x0E, 0x0C, 0x0D, 0x09, 0x0B, 0x03, 0x07, 0x06
+                     258     ;       };
+                     259     ;       TH0 = (65536-2000)/256;
+                     260                             ; SOURCE LINE # 35
+001D 758CF8          261             MOV     TH0,#0F8H
+                     262     ;       TL0 = (65536-2000)%256; 
+                     263                             ; SOURCE LINE # 36
+0020 758A30          264             MOV     TL0,#030H
+                     265     ;       if (beats != 0)
+                     266                             ; SOURCE LINE # 37
+0023 E4              267             CLR     A
+0024 FF              268             MOV     R7,A
+0025 FE              269             MOV     R6,A
+0026 FD              270             MOV     R5,A
+0027 FC              271             MOV     R4,A
+0028 AB00     F      272             MOV     R3,beats+03H
+002A AA00     F      273             MOV     R2,beats+02H
+002C A900     F      274             MOV     R1,beats+01H
+002E A800     F      275             MOV     R0,beats
+0030 C3              276             CLR     C
+0031 120000   F      277             LCALL   ?C?ULCMP
+0034 602E            278             JZ      ?C0005
+                     279     ;       {
+                     280                             ; SOURCE LINE # 38
+                     281     ;               tmp = P1;
+                     282                             ; SOURCE LINE # 39
+                     283     ;---- Variable 'tmp?241' assigned to Register 'R7' ----
+0036 AF90            284             MOV     R7,P1
+                     285     ;               tmp = tmp & 0xF0;
+                     286                             ; SOURCE LINE # 40
+0038 5307F0          287             ANL     AR7,#0F0H
+                     288     ;               tmp = tmp | BeatCode[index];
+                     289                             ; SOURCE LINE # 41
+003B E500     F      290             MOV     A,index?242
+003D 900000   F      291             MOV     DPTR,#BeatCode?243
+0040 93              292             MOVC    A,@A+DPTR
+0041 4207            293             ORL     AR7,A
+                     294     ;               P1 = tmp;
+                     295                             ; SOURCE LINE # 42
+0043 8F90            296             MOV     P1,R7
+                     297     ;               index++;
+                     298                             ; SOURCE LINE # 43
+0045 0500     F      299             INC     index?242
+                     300     ;               index = index &0x07;
+                     301                             ; SOURCE LINE # 44
+0047 530007   F      302             ANL     index?242,#07H
+                     303     ;               beats--;
+                     304                             ; SOURCE LINE # 45
+004A E500     F      305             MOV     A,beats+03H
+004C 24FF            306             ADD     A,#0FFH
+004E F500     F      307             MOV     beats+03H,A
+0050 E500     F      308             MOV     A,beats+02H
+0052 34FF            309             ADDC    A,#0FFH
+0054 F500     F      310             MOV     beats+02H,A
+0056 E500     F      311             MOV     A,beats+01H
+0058 34FF            312             ADDC    A,#0FFH
+005A F500     F      313             MOV     beats+01H,A
+005C E500     F      314             MOV     A,beats
+005E 34FF            315             ADDC    A,#0FFH
+0060 F500     F      316             MOV     beats,A
+                     317     ;       }
+                     318                             ; SOURCE LINE # 46
+0062 8003            319             SJMP    ?C0007
+0064                 320     ?C0005:
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     6
+
+                     321     ;       else
+                     322     ;       {
+                     323                             ; SOURCE LINE # 48
+                     324     ;               P1 = P1 |0x0F;
+                     325                             ; SOURCE LINE # 49
+0064 43900F          326             ORL     P1,#0FH
+                     327     ;       }
+                     328                             ; SOURCE LINE # 50
+                     329     ; }                     ; SOURCE LINE # 51
+0067                 330     ?C0007:
+0067 D007            331             POP     AR7
+0069 D006            332             POP     AR6
+006B D005            333             POP     AR5
+006D D004            334             POP     AR4
+006F D003            335             POP     AR3
+0071 D002            336             POP     AR2
+0073 D001            337             POP     AR1
+0075 D000            338             POP     AR0
+0077 D0D0            339             POP     PSW
+0079 D082            340             POP     DPL
+007B D083            341             POP     DPH
+007D D0F0            342             POP     B
+007F D0E0            343             POP     ACC
+0081 32              344             RETI    
+                     345     ; END OF InterruptTimer0
+                     346     
+                     347             END
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     7
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E                                T Y P E  V A L U E   ATTRIBUTES
+
+?C0001. . . . . . . . . . . . . . . .  C ADDR   001AH   R   SEG=?PR?MAIN?_________________
+?C0005. . . . . . . . . . . . . . . .  C ADDR   0064H   R   SEG=?PR?INTERRUPTTIMER0?_________________
+?C0007. . . . . . . . . . . . . . . .  C ADDR   0067H   R   SEG=?PR?INTERRUPTTIMER0?_________________
+?C?LMUL . . . . . . . . . . . . . . .  C ADDR   -----       EXT
+?C?ULCMP. . . . . . . . . . . . . . .  C ADDR   -----       EXT
+?C?ULDIV. . . . . . . . . . . . . . .  C ADDR   -----       EXT
+?CO?_________________ . . . . . . . .  C SEG    0008H       REL=UNIT
+?C_INITSEG. . . . . . . . . . . . . .  C SEG    0009H       REL=UNIT
+?C_STARTUP. . . . . . . . . . . . . .  C ADDR   -----       EXT
+?DT?_STARTMOTOR?_________________ . .  D SEG    0004H       REL=UNIT
+?DT?_________________ . . . . . . . .  D SEG    0005H       REL=UNIT
+?PR?INTERRUPTTIMER0?_________________  C SEG    0082H       REL=UNIT
+?PR?MAIN?_________________. . . . . .  C SEG    001CH       REL=UNIT
+?PR?_STARTMOTOR?_________________ . .  C SEG    0031H       REL=UNIT
+?_STARTMOTOR?BYTE . . . . . . . . . .  D ADDR   0000H   R   SEG=?DT?_STARTMOTOR?_________________
+AC. . . . . . . . . . . . . . . . . .  B ADDR   00D0H.6 A   
+ACC . . . . . . . . . . . . . . . . .  D ADDR   00E0H   A   
+ANGLE?140 . . . . . . . . . . . . . .  D ADDR   0000H   R   SEG=?DT?_STARTMOTOR?_________________
+AR0 . . . . . . . . . . . . . . . . .  D ADDR   0000H   A   
+AR1 . . . . . . . . . . . . . . . . .  D ADDR   0001H   A   
+AR2 . . . . . . . . . . . . . . . . .  D ADDR   0002H   A   
+AR3 . . . . . . . . . . . . . . . . .  D ADDR   0003H   A   
+AR4 . . . . . . . . . . . . . . . . .  D ADDR   0004H   A   
+AR5 . . . . . . . . . . . . . . . . .  D ADDR   0005H   A   
+AR6 . . . . . . . . . . . . . . . . .  D ADDR   0006H   A   
+AR7 . . . . . . . . . . . . . . . . .  D ADDR   0007H   A   
+B . . . . . . . . . . . . . . . . . .  D ADDR   00F0H   A   
+BEATCODE?243. . . . . . . . . . . . .  C ADDR   0000H   R   SEG=?CO?_________________
+BEATS . . . . . . . . . . . . . . . .  D ADDR   0001H   R   SEG=?DT?_________________
+CP_RL2. . . . . . . . . . . . . . . .  B ADDR   00C8H.0 A   
+CY. . . . . . . . . . . . . . . . . .  B ADDR   00D0H.7 A   
+C_T2. . . . . . . . . . . . . . . . .  B ADDR   00C8H.1 A   
+DPH . . . . . . . . . . . . . . . . .  D ADDR   0083H   A   
+DPL . . . . . . . . . . . . . . . . .  D ADDR   0082H   A   
+EA. . . . . . . . . . . . . . . . . .  B ADDR   00A8H.7 A   
+ES. . . . . . . . . . . . . . . . . .  B ADDR   00A8H.4 A   
+ET0 . . . . . . . . . . . . . . . . .  B ADDR   00A8H.1 A   
+ET1 . . . . . . . . . . . . . . . . .  B ADDR   00A8H.3 A   
+ET2 . . . . . . . . . . . . . . . . .  B ADDR   00A8H.5 A   
+EX0 . . . . . . . . . . . . . . . . .  B ADDR   00A8H.0 A   
+EX1 . . . . . . . . . . . . . . . . .  B ADDR   00A8H.2 A   
+EXEN2 . . . . . . . . . . . . . . . .  B ADDR   00C8H.3 A   
+EXF2. . . . . . . . . . . . . . . . .  B ADDR   00C8H.6 A   
+F0. . . . . . . . . . . . . . . . . .  B ADDR   00D0H.5 A   
+IE. . . . . . . . . . . . . . . . . .  D ADDR   00A8H   A   
+IE0 . . . . . . . . . . . . . . . . .  B ADDR   0088H.1 A   
+IE1 . . . . . . . . . . . . . . . . .  B ADDR   0088H.3 A   
+INDEX?242 . . . . . . . . . . . . . .  D ADDR   0000H   R   SEG=?DT?_________________
+INT0. . . . . . . . . . . . . . . . .  B ADDR   00B0H.2 A   
+INT1. . . . . . . . . . . . . . . . .  B ADDR   00B0H.3 A   
+INTERRUPTTIMER0 . . . . . . . . . . .  C ADDR   0000H   R   SEG=?PR?INTERRUPTTIMER0?_________________
+IP. . . . . . . . . . . . . . . . . .  D ADDR   00B8H   A   
+IT0 . . . . . . . . . . . . . . . . .  B ADDR   0088H.0 A   
+IT1 . . . . . . . . . . . . . . . . .  B ADDR   0088H.2 A   
+MAIN. . . . . . . . . . . . . . . . .  C ADDR   0000H   R   SEG=?PR?MAIN?_________________
+OV. . . . . . . . . . . . . . . . . .  B ADDR   00D0H.2 A   
+P . . . . . . . . . . . . . . . . . .  B ADDR   00D0H.0 A   
+P0. . . . . . . . . . . . . . . . . .  D ADDR   0080H   A   
+P1. . . . . . . . . . . . . . . . . .  D ADDR   0090H   A   
+P2. . . . . . . . . . . . . . . . . .  D ADDR   00A0H   A   
+A51 MACRO ASSEMBLER  _________________                                                    07/02/2020 17:47:55 PAGE     8
+
+P3. . . . . . . . . . . . . . . . . .  D ADDR   00B0H   A   
+PCON. . . . . . . . . . . . . . . . .  D ADDR   0087H   A   
+PS. . . . . . . . . . . . . . . . . .  B ADDR   00B8H.4 A   
+PSW . . . . . . . . . . . . . . . . .  D ADDR   00D0H   A   
+PT0 . . . . . . . . . . . . . . . . .  B ADDR   00B8H.1 A   
+PT1 . . . . . . . . . . . . . . . . .  B ADDR   00B8H.3 A   
+PT2 . . . . . . . . . . . . . . . . .  B ADDR   00B8H.5 A   
+PX0 . . . . . . . . . . . . . . . . .  B ADDR   00B8H.0 A   
+PX1 . . . . . . . . . . . . . . . . .  B ADDR   00B8H.2 A   
+RB8 . . . . . . . . . . . . . . . . .  B ADDR   0098H.2 A   
+RCAP2H. . . . . . . . . . . . . . . .  D ADDR   00CBH   A   
+RCAP2L. . . . . . . . . . . . . . . .  D ADDR   00CAH   A   
+RCLK. . . . . . . . . . . . . . . . .  B ADDR   00C8H.5 A   
+RD. . . . . . . . . . . . . . . . . .  B ADDR   00B0H.7 A   
+REN . . . . . . . . . . . . . . . . .  B ADDR   0098H.4 A   
+RI. . . . . . . . . . . . . . . . . .  B ADDR   0098H.0 A   
+RS0 . . . . . . . . . . . . . . . . .  B ADDR   00D0H.3 A   
+RS1 . . . . . . . . . . . . . . . . .  B ADDR   00D0H.4 A   
+RXD . . . . . . . . . . . . . . . . .  B ADDR   00B0H.0 A   
+SBUF. . . . . . . . . . . . . . . . .  D ADDR   0099H   A   
+SCON. . . . . . . . . . . . . . . . .  D ADDR   0098H   A   
+SM0 . . . . . . . . . . . . . . . . .  B ADDR   0098H.7 A   
+SM1 . . . . . . . . . . . . . . . . .  B ADDR   0098H.6 A   
+SM2 . . . . . . . . . . . . . . . . .  B ADDR   0098H.5 A   
+SP. . . . . . . . . . . . . . . . . .  D ADDR   0081H   A   
+T0. . . . . . . . . . . . . . . . . .  B ADDR   00B0H.4 A   
+T1. . . . . . . . . . . . . . . . . .  B ADDR   00B0H.5 A   
+T2. . . . . . . . . . . . . . . . . .  B ADDR   0090H.0 A   
+T2CON . . . . . . . . . . . . . . . .  D ADDR   00C8H   A   
+T2EX. . . . . . . . . . . . . . . . .  B ADDR   0090H.1 A   
+TB8 . . . . . . . . . . . . . . . . .  B ADDR   0098H.3 A   
+TCLK. . . . . . . . . . . . . . . . .  B ADDR   00C8H.4 A   
+TCON. . . . . . . . . . . . . . . . .  D ADDR   0088H   A   
+TF0 . . . . . . . . . . . . . . . . .  B ADDR   0088H.5 A   
+TF1 . . . . . . . . . . . . . . . . .  B ADDR   0088H.7 A   
+TF2 . . . . . . . . . . . . . . . . .  B ADDR   00C8H.7 A   
+TH0 . . . . . . . . . . . . . . . . .  D ADDR   008CH   A   
+TH1 . . . . . . . . . . . . . . . . .  D ADDR   008DH   A   
+TH2 . . . . . . . . . . . . . . . . .  D ADDR   00CDH   A   
+TI. . . . . . . . . . . . . . . . . .  B ADDR   0098H.1 A   
+TL0 . . . . . . . . . . . . . . . . .  D ADDR   008AH   A   
+TL1 . . . . . . . . . . . . . . . . .  D ADDR   008BH   A   
+TL2 . . . . . . . . . . . . . . . . .  D ADDR   00CCH   A   
+TMOD. . . . . . . . . . . . . . . . .  D ADDR   0089H   A   
+TR0 . . . . . . . . . . . . . . . . .  B ADDR   0088H.4 A   
+TR1 . . . . . . . . . . . . . . . . .  B ADDR   0088H.6 A   
+TR2 . . . . . . . . . . . . . . . . .  B ADDR   00C8H.2 A   
+TXD . . . . . . . . . . . . . . . . .  B ADDR   00B0H.1 A   
+WR. . . . . . . . . . . . . . . . . .  B ADDR   00B0H.6 A   
+_STARTMOTOR . . . . . . . . . . . . .  C ADDR   0000H   R   SEG=?PR?_STARTMOTOR?_________________
+_________________ . . . . . . . . . .  N NUMB   -----       
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

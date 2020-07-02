@@ -1,0 +1,24 @@
+C51 COMPILER V9.60.0.0   ____________________                                              07/02/2020 17:16:12 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ____________________
+OBJECT MODULE PLACED IN .\Objects\点阵_动态_用二维数组.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE 点阵_动态_用二维数组.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT
+                    -(.\Listings\点阵_动态_用二维数组.lst) TABS(2) OBJECT(.\Objects\点阵_动态_用二维数组.obj)
+
+line level    source
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    321    ----
+   CONSTANT SIZE    =    240    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

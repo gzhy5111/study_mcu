@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\按键_按下后数码管加1_消抖_使用定时器和中断.obj",
+"D:\Keil_v5\C51\LIB\C51S.LIB" 
+TO ".\Objects\按键_按下后数码管加1_消抖_使用定时器和中断" 
+PRINT(".\Listings\按键_按下后数码管加1_消抖_使用定时器和中断.m51") RAMSIZE(256) 

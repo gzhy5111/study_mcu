@@ -1,0 +1,99 @@
+C51 COMPILER V9.60.0.0   _________                                                         07/02/2020 17:15:15 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE _________
+OBJECT MODULE PLACED IN .\Objects\µ„’Û_∂ØÃ¨.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE µ„’Û_∂ØÃ¨.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\µ„’Û_∂ØÃ¨.lst) TABS(2) OBJECT(.\Objects\µ„’Û_∂ØÃ¨.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          sbit ADDR0 = P1^0;
+   4          sbit ADDR1 = P1^1;
+   5          sbit ADDR2 = P1^2;
+   6          sbit ADDR3 = P1^3;
+   7          sbit ENLED = P1^4;
+   8          
+   9          unsigned char code image[] = 
+  10          {
+  11            0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
+  12            0xC3,0xE7,0xE7,0xE7,0xE7,0xE7,0xC3,0xFF,
+  13            0x99,0x00,0x00,0x00,0x81,0xC3,0xE7,0xFF,
+  14            0x99,0x99,0x99,0x99,0x99,0x81,0xC3,0xFF,
+  15            0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
+  16          };
+  17          
+  18          void main()
+  19          {
+  20   1        //ÂºÄÂêØU4‰ΩøËÉΩ
+  21   1        ADDR3 = 0;
+  22   1        ENLED = 0;
+  23   1        
+  24   1        //ÂºÄÂêØ‰∏≠Êñ≠
+  25   1        EA = 1;
+  26   1        ET0 = 1;
+  27   1        
+  28   1        //ËÆ°Êó∂Âô®
+  29   1        TR0 = 1;
+  30   1        TMOD = 0x01;
+  31   1        TH0 = (65536-1000)/256;
+  32   1        TL0 = (65536-1000)%256;
+  33   1        
+  34   1        while(1);
+  35   1      }
+  36          
+  37          static unsigned char index = 0;
+  38          static unsigned char tmr = 0;
+  39          
+  40          void InterruptTimer0() interrupt 1
+  41          {
+  42   1        static unsigned char i = 0;     //!!‰∏çË¶ÅÂøòËÆ∞ static‰øÆÈ•∞i ‰∏∫ÂÖ®Â±ÄÂèòÈáè„ÄÇ
+  43   1        TH0 = (65536-1000)/256;
+  44   1        TL0 = (65536-1000)%256;
+  45   1        
+  46   1      
+  47   1        
+  48   1        P0 = 0xFF;
+  49   1        switch(i)
+  50   1        {
+  51   2          case 0: ADDR2=0; ADDR1=0; ADDR0=0; P0=image[index+0]; i++; break;
+  52   2          case 1: ADDR2=0; ADDR1=0; ADDR0=1; P0=image[index+1]; i++; break;
+  53   2          case 2: ADDR2=0; ADDR1=1; ADDR0=0; P0=image[index+2]; i++; break;
+  54   2          case 3: ADDR2=0; ADDR1=1; ADDR0=1; P0=image[index+3]; i++; break;
+C51 COMPILER V9.60.0.0   _________                                                         07/02/2020 17:15:15 PAGE 2   
+
+  55   2          case 4: ADDR2=1; ADDR1=0; ADDR0=0; P0=image[index+4]; i++; break;
+  56   2          case 5: ADDR2=1; ADDR1=0; ADDR0=1; P0=image[index+5]; i++; break;
+  57   2          case 6: ADDR2=1; ADDR1=1; ADDR0=0; P0=image[index+6]; i++; break;
+  58   2          case 7: ADDR2=1; ADDR1=1; ADDR0=1; P0=image[index+7]; i=0; break;
+  59   2          default: break;
+  60   2        }
+  61   1        
+  62   1        tmr++;
+  63   1        if (tmr >= 250)
+  64   1        {
+  65   2          index++;
+  66   2          tmr = 0;
+  67   2          if (index >= 32)
+  68   2          {
+  69   3            index = 0;
+  70   3          }
+  71   2        }
+  72   1        
+  73   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    239    ----
+   CONSTANT SIZE    =     40    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      3    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

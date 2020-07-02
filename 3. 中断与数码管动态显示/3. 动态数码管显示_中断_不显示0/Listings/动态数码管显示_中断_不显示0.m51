@@ -1,0 +1,220 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/02/2020  17:09:46  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\动态数码管显示_中断_不显示0.obj TO .\Objects\动态数码管显示
+>> _中断_不显示0 PRINT (.\Listings\动态数码管显示_中断_不显示0.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\动态数码管显示_中断_不显示0.obj (__________________________0)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULDIV)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?LCASE)
+
+
+LINK MAP OF MODULE:  .\Objects\动态数码管显示_中断_不显示0 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000DH     UNIT         ?DT?__________________________0
+            DATA    0015H     000AH     UNIT         _DATA_GROUP_
+            IDATA   001FH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     07F2H                  *** GAP ***
+            CODE    0800H     0134H     UNIT         ?PR?INTERRUPTTIMER0?__________________________0
+            CODE    0934H     0127H     UNIT         ?PR?MAIN?__________________________0
+            CODE    0A5BH     0108H     UNIT         ?C?LIB_CODE
+            CODE    0B63H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0BEFH     0016H     UNIT         ?C_INITSEG
+            CODE    0C05H     0010H     UNIT         ?CO?__________________________0
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\动态数码管显示_中断_不显示0 (?C_STARTUP)
+
+
+SEGMENT                                            DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH
+----------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----
+  +--> ?PR?MAIN?__________________________0
+  +--> ?C_INITSEG
+
+?PR?MAIN?__________________________0             0015H    000AH
+  +--> ?CO?__________________________0
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\动态数码管显示_中断_不显示0 (?C_STARTUP)
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/02/2020  17:09:46  PAGE 2
+
+
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0B63H         SEGMENT       ?C_C51STARTUP
+  I:001FH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0B66H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0B63H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0B63H         LINE#         133
+  C:0B65H         LINE#         134
+  C:0B66H         LINE#         135
+  C:0B67H         LINE#         136
+  C:0B69H         LINE#         185
+  C:0B6CH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        __________________________0
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  B:00A8H.7       PUBLIC        EA
+  C:0800H         PUBLIC        InterruptTimer0
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:0008H         PUBLIC        flag
+  C:0934H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  C:0C05H         PUBLIC        ledChar
+  D:0009H         PUBLIC        ledBuff
+  D:000FH         PUBLIC        cnt
+  B:00A8H.1       PUBLIC        ET0
+  B:0090H.0       PUBLIC        ADDR0
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/02/2020  17:09:46  PAGE 3
+
+
+  D:008CH         PUBLIC        TH0
+  B:0090H.1       PUBLIC        ADDR1
+  B:0090H.2       PUBLIC        ADDR2
+  B:0090H.3       PUBLIC        ADDR3
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  D:00C8H         PUBLIC        T2CON
+  D:0011H         PUBLIC        i
+  B:0090H.4       PUBLIC        ENLED
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0015H         SYMBOL        sec
+  D:0007H         SYMBOL        j
+  D:0019H         SYMBOL        buf
+  -------         ENDDO         
+  C:0934H         LINE#         26
+  C:0934H         LINE#         27
+  C:0934H         LINE#         29
+  C:093DH         LINE#         30
+  C:093EH         LINE#         34
+  C:0940H         LINE#         35
+  C:0942H         LINE#         38
+  C:0945H         LINE#         39
+  C:0948H         LINE#         40
+  C:094BH         LINE#         41
+  C:094DH         LINE#         44
+  C:094FH         LINE#         45
+  C:0951H         LINE#         47
+  C:0951H         LINE#         48
+  C:0951H         LINE#         50
+  C:0957H         LINE#         51
+  C:0957H         LINE#         52
+  C:0959H         LINE#         53
+  C:096EH         LINE#         54
+  C:0983H         LINE#         55
+  C:09A1H         LINE#         56
+  C:09BFH         LINE#         57
+  C:09DEH         LINE#         58
+  C:09FDH         LINE#         59
+  C:0A1DH         LINE#         60
+  C:0A2AH         LINE#         61
+  C:0A2AH         LINE#         62
+  C:0A31H         LINE#         63
+  C:0A31H         LINE#         64
+  C:0A37H         LINE#         65
+  C:0A37H         LINE#         67
+  C:0A37H         LINE#         68
+  C:0A37H         LINE#         69
+  C:0A37H         LINE#         70
+  C:0A3AH         LINE#         71
+  C:0A48H         LINE#         72
+  C:0A48H         LINE#         73
+  C:0A58H         LINE#         74
+  -------         ENDPROC       MAIN
+  -------         PROC          INTERRUPTTIMER0
+  C:0800H         LINE#         79
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/02/2020  17:09:46  PAGE 4
+
+
+  C:0815H         LINE#         83
+  C:0818H         LINE#         84
+  C:081BH         LINE#         85
+  C:0823H         LINE#         86
+  C:082CH         LINE#         87
+  C:082CH         LINE#         88
+  C:0832H         LINE#         89
+  C:0835H         LINE#         90
+  C:0835H         LINE#         93
+  C:0838H         LINE#         94
+  C:086BH         LINE#         95
+  C:086BH         LINE#         96
+  C:088CH         LINE#         97
+  C:08ACH         LINE#         98
+  C:08CCH         LINE#         99
+  C:08ECH         LINE#         100
+  C:090CH         LINE#         101
+  C:0921H         LINE#         102
+  C:0921H         LINE#         103
+  -------         ENDPROC       INTERRUPTTIMER0
+  -------         ENDMOD        __________________________0
+
+  -------         MODULE        ?C?ULDIV
+  C:0A97H         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?LCASE
+  C:0B29H         PUBLIC        ?C?LCASE
+  -------         ENDMOD        ?C?LCASE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0292H BYTE (32%) *
+******************************************************************************
+
+Program Size: data=32.0 xdata=0 code=1051
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
